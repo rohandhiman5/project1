@@ -1,4 +1,4 @@
-# project1
+#project1
 #include<iostream>;
 using namespace std;
 int fact(int n){
@@ -24,13 +24,19 @@ float power(float z,float y){
     return ans;
     
 }
-float sin(float x){
-    float y;
-    y=x-(power(x,3)/fact(3))+(power(x,5)/fact(5))-(power(x,7)/fact(7))+(power(x,9)/fact(9))-(power(x,11)/fact(11))+(power(x,13)/fact(13))+(power(x,15)/fact(15))-(power(x,17)/fact(17))+(power(x,19)/fact(19))-(power(x,21)/fact(21));
+float sin(float x)
+{
+    float y = 0;
+    for (int i = 3; i <= 19; i += 4)
+    {
+        y -= (power(x, i) / fact(i));
+    }
+    for (int s = 1; s <= 15; s += 4)
+    {
+        y += (power(x, s) / fact(s));
+    }
+
     return y;
-
-
-
 }
 float cos(float x)
 {
